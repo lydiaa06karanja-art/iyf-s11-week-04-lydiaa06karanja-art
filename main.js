@@ -106,3 +106,10 @@ console.log(isEven(4)); // true
 console.log(isEven(7)); // false
 console.log(getInitials("Regina Gathoni")); // RG
 console.log(reverseString("hello")); // olleh
+// Exercise 3: Default Parameters
+function calculateTip(bill, tipPercent = 15) {
+    return (bill * tipPercent) / 100;
+}
+
+console.log(calculateTip(1000));       // 150
+console.log(calculateTip(1000, 20));   // 200
