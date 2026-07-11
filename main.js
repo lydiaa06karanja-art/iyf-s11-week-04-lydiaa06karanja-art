@@ -113,3 +113,71 @@ function calculateTip(bill, tipPercent = 15) {
 
 console.log(calculateTip(1000));       // 150
 console.log(calculateTip(1000, 20));   // 200
+// CONTROL FLOW
+
+// EXERCISE 1: IF/ELSE - Grade
+function getGrade(score) {
+    if (score >= 90) return "A";
+    else if (score >= 80) return "B";
+    else if (score >= 70) return "C";
+    else if (score >= 60) return "D";
+    else return "F";
+}
+
+// EXERCISE 2: SWITCH - Day Name
+function getDayName(dayNumber) {
+    switch (dayNumber) {
+        case 0: return "Sunday";
+        case 1: return "Monday";
+        case 2: return "Tuesday";
+        case 3: return "Wednesday";
+        case 4: return "Thursday";
+        case 5: return "Friday";
+        case 6: return "Saturday";
+        default: return "Invalid day";
+    }
+}
+
+// EXERCISE 3: LOOPS
+console.log("--- TASK 7.4 EXERCISE 3 ---");
+
+// 1. Print numbers 1-100
+console.log("1. Numbers 1-100:");
+for (let i = 1; i <= 100; i++) {
+    console.log(i);
+}
+
+// 2. Print only even numbers 1-50
+console.log("2. Even numbers 1-50:");
+for (let i = 2; i <= 50; i += 2) {
+    console.log(i);
+}
+
+// 3. FizzBuzz
+console.log("3. FizzBuzz 1-100:");
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+
+// 4. Print a triangle of stars
+console.log("4. Triangle of Stars:");
+for (let i = 1; i <= 5; i++) {
+    let stars = "";
+    for (let j = 1; j <= i; j++) {
+        stars += "*";
+    }
+    console.log(stars);
+}
+
+// TEST EXERCISE 1 & 2
+console.log("--- TEST TASK 7.4 EX 1 & 2 ---");
+console.log("Grade for 85:", getGrade(85));  // B
+console.log("Day 3:", getDayName(3));        // Wednesday
