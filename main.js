@@ -79,6 +79,68 @@ const celsiusToFahrenheit = (celsius) => (celsius * 9/5) + 32;
 
 // 3. Is Even - YOUR TURN TO TRY FIRST
 // Hint: number % 2 === 0
+//  CALCULATOR 
+
+// 1. Functions for add, subtract, multiply, divide
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    // 3. Handle division by zero
+    if (b === 0) {
+        return "Error: Cannot divide by zero";
+    }
+    return a / b;
+}
+
+// Extra functions for % and **
+function modulus(a, b) {
+    return a % b;
+}
+
+function power(a, b) {
+    return a ** b;
+}
+
+// 2. A main calculate(num1, operator, num2) function
+function calculate(num1, operator, num2) {
+    switch (operator) {
+        case "+":
+            return add(num1, num2);
+        case "-":
+            return subtract(num1, num2);
+        case "*":
+            return multiply(num1, num2);
+        case "/":
+            return divide(num1, num2);
+        case "%":  // 4. modulus
+            return modulus(num1, num2);
+        case "**": // 4. power
+            return power(num1, num2);
+        default:
+            return "Invalid operator";
+    }
+}
+
+// TEST THE CALCULATOR
+console.log("--- MINI-PROJECT: CALCULATOR TESTS ---");
+console.log("10 + 5 =", calculate(10, "+", 5));   // 15
+console.log("10 - 5 =", calculate(10, "-", 5));   // 5
+console.log("10 * 5 =", calculate(10, "*", 5));   // 50
+console.log("10 / 5 =", calculate(10, "/", 5));   // 2
+console.log("10 / 0 =", calculate(10, "/", 0));   // Error message
+console.log("10 % 3 =", calculate(10, "%", 3));   // 1
+console.log("2 ** 4 =", calculate(2, "**", 4));   // 16
+console.log("10 $ 5 =", calculate(10, "$", 5));   // Invalid operator
 
 // 4. Get Initials
 // Hint: split the name, take first letter of each
