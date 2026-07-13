@@ -447,4 +447,86 @@ console.log(gradeTracker.getStudentAverage("Alice")); // 91
 console.log(gradeTracker.getSubjectAverage("math")); // 75.67
 console.log(gradeTracker.getTopStudent()); // Alice
 console.log(gradeTracker.getStrugglingStudents()); // ["Charlie"]
-console.log(gradeTracker.generateReportCard("Alice"));
+DAILY CHALLENGES 
+
+// DAY 1: FIZZBUZZ
+console.log("--- DAY 1: FIZZBUZZ ---");
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+// DAY 2: REVERSE A STRING
+console.log("--- DAY 2: REVERSE STRING ---");
+// Method 1: Built-in methods
+function reverseString1(str) {
+  return str.split("").reverse().join("");
+}
+
+// Method 2: Loop
+function reverseString2(str) {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+
+console.log(reverseString1("hello")); // "olleh"
+console.log(reverseString2("world")); // "dlrow"
+
+// DAY 3: FIND LARGEST NUMBER
+console.log("--- DAY 3: LARGEST NUMBER ---");
+// Method 1: Loop
+function findLargest1(arr) {
+  let largest = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+  return largest;
+}
+
+// Method 2: reduce
+function findLargest2(arr) {
+  return arr.reduce((max, num) => num > max? num : max, arr[0]);
+}
+
+console.log(findLargest1([3, 9, 1, 6, 4])); // 9
+console.log(findLargest2([10, 2, 8, 15, 7])); // 15
+
+// DAY 4: REMOVE DUPLICATES
+console.log("--- DAY 4: REMOVE DUPLICATES ---");
+// Method 1: Set
+function removeDuplicates1(arr) {
+  return [...new Set(arr)];
+}
+
+// Method 2: filter
+function removeDuplicates2(arr) {
+  return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+
+console.log(removeDuplicates1([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
+console.log(removeDuplicates2([7, 7, 8, 9, 9, 10])); // [7, 8, 9, 10]
+
+// DAY 5: PALINDROME CHECKER
+console.log("--- DAY 5: PALINDROME ---");
+function isPalindrome(str) {
+  // Remove spaces and make lowercase
+  const cleanStr = str.toLowerCase().replace(/\s/g, "");
+  const reversed = cleanStr.split("").reverse().join("");
+  return cleanStr === reversed;
+}
+
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello")); // false
+console.log(isPalindrome("A man a plan a canal Panama")); // true
