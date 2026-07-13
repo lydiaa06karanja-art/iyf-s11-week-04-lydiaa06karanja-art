@@ -243,3 +243,20 @@ for (let i = 1; i <= 5; i++) {
 console.log("--- TEST TASK 7.4 EX 1 & 2 ---");
 console.log("Grade for 85:", getGrade(85));  // B
 console.log("Day 3:", getDayName(3));        // Wednesday
+const numbers = [1, 2, 3, 4, 5, -2, 15];
+
+// 1. Double all numbers
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8, 10, -4, 30]
+
+// 2. Filter out negative numbers  
+const positives = numbers.filter(num => num >= 0);
+console.log(positives); // [1, 2, 3, 4, 5, 15]
+
+// 3. Find first number greater than 10
+const firstBig = numbers.find(num => num > 10);
+console.log(firstBig); // 15
+
+// 4. Calculate product of all numbers
+const product = numbers.reduce((total, num) => total * num, 1);
+console.log(product); // -4500
