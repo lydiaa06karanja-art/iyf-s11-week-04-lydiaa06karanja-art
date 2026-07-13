@@ -323,3 +323,44 @@ console.log(Object.entries(scores)); // [["math",95],["english",88],["science",9
 for (const [subject, score] of Object.entries(scores)) {
   console.log(`${subject}: ${score}`)
 }
+//  ARRAY OF OBJECTS 
+const students = [
+  { name: "Alice", age: 22, grade: 85, major: "CS" },
+  { name: "Bob", age: 20, grade: 72, major: "Math" },
+  { name: "Charlie", age: 23, grade: 78, major: "CS" },
+  { name: "Diana", age: 21, grade: 88, major: "Physics" },
+  { name: "Eve", age: 22, grade: 95, major: "CS" }
+];
+
+// 1. Get all student names
+const names = students.map(student => student.name);
+console.log(names); // ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+
+// 2. Get students with grade > 80
+const highAchievers = students.filter(student => student.grade > 80);
+console.log(highAchievers); // Alice, Diana, Eve
+
+// 3. Find the student named "Charlie"
+const charlie = students.find(student => student.name === "Charlie");
+console.log(charlie); // {name: "Charlie", age: 23, grade: 78, major: "CS"}
+
+// 4. Calculate average grade
+const total = students.reduce((sum, student) => sum + student.grade, 0);
+const avgGrade = total / students.length;
+console.log(avgGrade); // 83.6
+
+// 5. Get CS majors only
+const csMajors = students.filter(student => student.major === "CS");
+console.log(csMajors); // Alice, Charlie, Eve
+
+// 6. Sort by grade (highest first)
+const sortedByGrade = [...students].sort((a, b) => b.grade - a.grade);
+console.log(sortedByGrade); // Eve 95, Diana 88, Alice 85...
+
+// 7. Check if any student has grade > 90
+const hasTopStudent = students.some(student => student.grade > 90);
+console.log(hasTopStudent); // true
+
+// 8. Check if all students are passing (grade >= 60)
+const allPassing = students.every(student => student.grade >= 60);
+console.log(allPassing); // true
