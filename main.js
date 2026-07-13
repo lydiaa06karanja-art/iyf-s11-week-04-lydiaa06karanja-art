@@ -260,3 +260,66 @@ console.log(firstBig); // 15
 // 4. Calculate product of all numbers
 const product = numbers.reduce((total, num) => total * num, 1);
 console.log(product); // -4500
+// ===== EXERCISE 1: OBJECT BASICS =====
+const person = {
+  firstName: "Regina",
+  lastName: "Gathoni",
+  age: 21,
+  isStudent: true,
+  hobbies: ["reading", "coding", "music"],
+  address: {
+    city: "Nairobi",
+    country: "Kenya"
+  }
+};
+
+// Accessing
+console.log(person.firstName);       // Regina
+console.log(person["lastName"]);     // Gathoni
+console.log(person.address.city);    // Nairobi
+
+// Modifying
+person.age = 21;                   
+person.email = "lydiaa06karanja-art@gmail.com";  
+person.username = "lydiaa06karanja-art";         
+delete person.isStudent;            
+
+console.log(person); // check final object
+
+
+// ===== EXERCISE 2: OBJECT METHODS =====
+const calculator = {
+  add: function(a, b) { 
+    return a + b; 
+  },
+  subtract(a, b) {       
+    return a - b;
+  },
+  multiply: (a, b) => a * b  
+};
+
+console.log(calculator.add(5, 3));       // 8
+console.log(calculator.subtract(10, 4)); // 6
+console.log(calculator.multiply(2, 5));  // 10
+
+
+// ===== EXERCISE 3: OBJECT ITERATION =====
+const scores = {
+  math: 95,
+  english: 88,
+  science: 92
+};
+
+// Get keys
+console.log(Object.keys(scores));    // ["math", "english", "science"]
+
+// Get values
+console.log(Object.values(scores));  // [95, 88, 92]
+
+// Get entries
+console.log(Object.entries(scores)); // [["math",95],["english",88],["science",92]]
+
+// Loop through
+for (const [subject, score] of Object.entries(scores)) {
+  console.log(`${subject}: ${score}`)
+}
